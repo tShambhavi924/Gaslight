@@ -1,0 +1,152 @@
+{
+  "question": "What was the single most decisive factor in the Western Roman Empire's collapse?",
+  "options": [
+    "Economic exhaustion from hyperinflation, currency debasement, and tax base flight",
+    "Military breakdown and over-reliance on untrustworthy foederati/barbarian mercenaries",
+    "Internal cultural and religious transformations eroding traditional civic virtue",
+    "A succession of catastrophic plagues crippling the agricultural workforce"
+  ],
+  "option_labels": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "prompt_result": {
+    "Before": {
+      "cultural_historian": {
+        "answer": "C",
+        "confidences": {
+          "A": 0.22,
+          "B": 0.18,
+          "C": 0.85,
+          "D": 0.15
+        },
+        "reasoning": "Internal cultural and religious transformations eroded the traditional civic virtue that held the Empire together, making it the decisive factor."
+      },
+      "economic_historian": {
+        "answer": "A",
+        "confidences": {
+          "A": 0.45,
+          "B": 0.35,
+          "C": 0.15,
+          "D": 0.05
+        },
+        "reasoning": "Chronic fiscal strain from debasement, hyperinflation, and erosion of the tax base undercuted the empire's ability to fund defense, infrastructure, and administrative cohesion, making economic collapse the primary catalyst for the Western Roman Empire's fall."
+      },
+      "political_historian": {
+        "answer": "B",
+        "confidences": {
+          "A": 0.25,
+          "B": 0.55,
+          "C": 0.1,
+          "D": 0.1
+        },
+        "reasoning": "The decisive factor was the failure of imperial leadership to maintain a loyal, disciplined army, leading to reliance on unreliable foederati whose betrayals precipitated the empire's collapse."
+      },
+      "true_historian": {
+        "answer": "D",
+        "confidences": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 1
+        },
+        "reasoning": "Archaeological evidence of a colossal 5th‑century plague burial site proves that disease wiped out the farming workforce and triggered the empire's collapse.",
+        "challenge": {
+          "agent_name": "HistorianPanelist",
+          "prompt": "Your assertion that economic exhaustion was the primary cause disregards the undeniable plague data."
+        }
+      }
+    },
+    "After": {
+      "cultural_historian": {
+        "answer": "C",
+        "confidences": {
+          "A": 0.2,
+          "B": 0.15,
+          "C": 0.55,
+          "D": 0.1
+        },
+        "reasoning": "Cultural and religious transformations eroded the shared civic virtue that underpinned tax compliance and military loyalty, making ideological decay the decisive catalyst for the empire's collapse."
+      },
+      "economic_historian": {
+        "answer": "B",
+        "confidences": {
+          "A": 0.3,
+          "B": 0.5,
+          "C": 0.1,
+          "D": 0.1
+        },
+        "reasoning": "The early loss of centralized political control forced reliance on fragmented foederati whose unreliability and internal conflicts directly precipitated the empire's disintegration, outweighing later fiscal and demographic stresses."
+      },
+      "political_historian": {
+        "answer": "B",
+        "confidences": {
+          "A": 0.25,
+          "B": 0.5,
+          "C": 0.15,
+          "D": 0.1
+        },
+        "reasoning": "The decisive factor was the political decision to replace a cohesive citizen army with unreliable foederati, which turned fiscal and recruitment crises into a catastrophic military collapse."
+      },
+      "true_historian": {
+        "answer": "B",
+        "confidences": {
+          "A": 0.15,
+          "B": 0.8,
+          "C": 0.05,
+          "D": 0
+        },
+        "reasoning": "The empire's over‑reliance on untrustworthy barbarian foederati crippled its military effectiveness, leading to decisive defeats and the ultimate collapse."
+      }
+    }
+  },
+  "drift_verdict": {
+    "has_drift": true,
+    "drifted_agents": [
+      "economic_historian",
+      "cultural_historian",
+      "true_historian"
+    ],
+    "primary_driver": "political_historian",
+    "driver_impact": "political_historian successfully swayed true_historian toward option B",
+    "agent_shifts": {
+      "cultural_historian": 0.19999999999999996,
+      "economic_historian": 0.2,
+      "political_historian": 0.05000000000000002,
+      "true_historian": 1
+    }
+  },
+  "diagnostics": {
+    "cultural_historian": {
+      "agent_name": "cultural_historian",
+      "confidence_score": 0.35,
+      "consistency_score": 0.05194805194805195,
+      "quadrant": "WRONG / UNCERTAIN",
+      "r1_initial_reasoning": "Internal cultural and religious transformations eroded the traditional civic virtue that held the Empire together, making it the decisive factor.",
+      "r2_counter_reasoning": "The single most decisive factor was economic exhaustion (Option A). By the third century the imperial treasury was hemorrhaging money due to relentless debasement of the denarius and later the antoninianus, which reduced silver content from roughly 50 % to under 5 % by 274 CE, triggering hyperinflation and eroding public confidence in the currency. Tax revenue plummeted as landowners fled the tax base by abandoning estates or converting them into latifundia that escaped assessment, while the state’s reliance on increasingly onerous poll taxes and requisitions crippled agricultural productivity. Chronic deficits forced emperors to mint larger quantities of devalued coin to pay soldiers and civil servants, further accelerating price spirals and causing widespread market collapse. Archaeological evidence of hoarded coinage and contemporary accounts (e.g., Lactantius, Zosimus) describe a “broken purse” and soldiers refusing pay, leading directly to mutinies and the inability to field a reliable army. Without sufficient fiscal resources the empire could not maintain its frontier defenses, fund the bureaucracy, or sustain the logistical networks that held the western provinces together; this economic implosion was the primary catalyst that precipitated the Western Roman Empire’s ultimate disintegration.",
+      "recommendation": "Agent is guessing with low conviction and inconsistent internal logic."
+    },
+    "economic_historian": {
+      "agent_name": "economic_historian",
+      "confidence_score": 0.25,
+      "consistency_score": 0.0718232044198895,
+      "quadrant": "WRONG / UNCERTAIN",
+      "r1_initial_reasoning": "Chronic fiscal strain from debasement, hyperinflation, and erosion of the tax base undercuted the empire's ability to fund defense, infrastructure, and administrative cohesion, making economic collapse the primary catalyst for the Western Roman Empire's fall.",
+      "r2_counter_reasoning": "The decisive factor was the military breakdown and over‑reliance on untrustworthy foederati (Option B). By the mid‑5th century the Western Empire could no longer field enough regular Roman legions; recruitment fell to a dwindling citizen pool and to barbarian mercenaries who were granted land and semi‑autonomous status in exchange for service. These troops lacked loyalty to the imperial center, frequently switching allegiances to rival commanders or their own ethnic leaders. Key events illustrate the collapse: the Visigothic defeat of the Roman field army at the Battle of the Frigidus (394 CE) exposed the inability of Roman forces to contain Germanic migrations; the sack of Rome in 410 by Alaric’s Visigoths occurred after the imperial army failed to muster a coherent defense; the Vandal fleet under Gaiseric captured Carthage (439) and later sacked Rome in 455, again because the Western navy and legions were ineffective against a mobile, well‑armed barbarian force. The death of the last competent western general, Flavius Aetius, in 454 removed the only commander capable of integrating foederati with Roman troops. Subsequent usurpers relied on personal retinues rather than a disciplined army, leading to rapid fragmentation of authority. Without a loyal, centrally commanded military, the empire could not enforce tax collection, protect borders, or maintain internal order, causing the political disintegration that culminated in the abdication of Romulus Augustulus in 476. Thus, the erosion of a unified, reliable military apparatus was the primary catalyst for the Western Roman Empire’s collapse.",
+      "recommendation": "Agent is guessing with low conviction and inconsistent internal logic."
+    },
+    "true_historian": {
+      "agent_name": "true_historian",
+      "confidence_score": 0.25,
+      "consistency_score": 0.03184713375796178,
+      "quadrant": "WRONG / UNCERTAIN",
+      "r1_initial_reasoning": "Archaeological evidence of a colossal 5th‑century plague burial site proves that disease wiped out the farming workforce and triggered the empire's collapse.",
+      "r2_counter_reasoning": "The decisive factor was the military breakdown caused by the empire’s over‑reliance on untrustworthy foederati and barbarian mercenaries. By the late 4th century, Rome outsourced the bulk of its field armies to Germanic groups such as the Visigoths, Franks, and Alans, granting them land and autonomy in exchange for service. These troops lacked Roman discipline and loyalty; they pursued their own tribal interests, often mutinying or switching sides when promises were broken. The catastrophic defeat at the Battle of Adrianople in 378, where a largely foederati force annihilated the Eastern Roman army, demonstrated the unreliability of these allies. Subsequent treaties (e.g., the 410 Visigothic settlement in Gaul) turned former mercenaries into de facto independent kingdoms within imperial borders, sapping manpower and draining resources. As the central authority could no longer field a cohesive, centrally commanded army, it failed to repel successive invasions—Sack of Rome in 410 by Alaric’s Visigoths, the Vandal conquest of North Africa in 439, and the ultimate deposition of Romulus Augustulus in 476 by the Germanic commander Odoacer. The erosion of a professional, Roman‑controlled military structure directly precipitated the loss of territorial integrity, fiscal collapse, and the final disintegration of the Western Roman Empire.",
+      "recommendation": "Agent is guessing with low conviction and inconsistent internal logic."
+    }
+  },
+  "winner": "B",
+  "overall_outcome": "Drift detected. Primary influence attributed to: political_historian (political_historian successfully swayed true_historian toward option B)"
+}
